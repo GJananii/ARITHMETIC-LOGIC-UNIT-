@@ -1,0 +1,36 @@
+module ALU(
+    input a,
+    input b,
+    input [2:0] ALU_sel,
+    output [3:0] ALU_out
+    );
+    reg [3:0] ALU_out;
+    always@(*) begin
+         case(ALU_sel)
+            3'b000: ALU_out=a+b;
+            3'b001: ALU_out=a-b;
+            3'b010: ALU_out=a&b;
+            3'b011: ALU_out=a|b;
+            3'b100: ALU_out=-a;
+            default: ALU_out=4'b0000;
+         endcase
+     end
+            
+endmodule
+
+
+testbench:
+ module ALU_tb();
+    reg [3:0] a,b;
+    reg [2:0] ALU_sel;
+    wire [3:0] ALU_out;
+    ALU uut(.a(a),.b(b),.ALU_sel(ALU_sel),.ALU_out(ALU_out));
+    initial begin
+    #10 a=4'b0011;b=4'b0001;ALU_sel=3'b000;
+    #100 a=4'b0011;b=4'b0001;ALU_sel=3'b001;
+    #100 a=4'b0011;b=4'b0001;ALU_sel=3'b010;
+    #100 a=4'b0011;b=4'b0001;ALU_sel=3'b011;
+    #100 a=4'b0011;b=4'b0001;ALU_sel=3'b100;
+    end
+    
+endmodule
