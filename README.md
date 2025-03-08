@@ -35,3 +35,8 @@ Clone this repository.
 Compile the ALU module using an HDL simulator (ModelSim, Xilinx Vivado, etc.).
 Run the testbench to test the ALU operations.
 Analyze simulation results and document performance.
+
+OUTPUT:
+
+![Image](https://github.com/user-attachments/assets/aca623f7-a553-4a85-927f-6d438927eb0c)
+![Image](https://github.com/user-attachments/assets/e534ac5c-8695-4231-ad8e-ce2733ddd59f)
